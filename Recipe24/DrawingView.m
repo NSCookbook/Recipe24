@@ -93,6 +93,9 @@
     //Create and Draw the gradient
     CGContextDrawLinearGradient(context, gradient, startPoint, endPoint, 0);
     
+    CGColorSpaceRelease(baseSpace);
+    CGGradientRelease(gradient);
+    
     
 }
 
@@ -127,6 +130,8 @@
     
     [self drawGradient:context];
     
+    
+    CGImageRelease(mask);
     CGContextRestoreGState(context);
     
     
